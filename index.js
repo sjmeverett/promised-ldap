@@ -30,6 +30,7 @@ function promisify(fn) {
 });
 
 
+Client.prototype.destroy = function () { this.client.destroy(); };
 Client.prototype._search = promisify('search');
 
 
