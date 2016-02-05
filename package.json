@@ -1,6 +1,6 @@
 {
   "name": "promised-ldap",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A thin wrapper over ldapjs to give a promise interface and a couple of other goodies",
   "main": "index.js",
   "scripts": {
