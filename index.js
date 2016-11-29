@@ -7,6 +7,7 @@ function Client(options) {
   this.client = ldap.createClient(options);
 }
 
+Client.LdapJs = ldap
 
 function promisify(fn) {
   return function () {
@@ -25,7 +26,7 @@ function promisify(fn) {
 }
 
 
-['bind', 'add', 'compare', 'del', 'exop', 'modify', 'modifyDN', 'unbind'].forEach(function (fn) {
+['bind', 'add', 'compare', 'del', 'exop', 'modify', 'modifyDN', 'unbind', 'starttls'].forEach(function (fn) {
   Client.prototype[fn] = promisify(fn);
 });
 
