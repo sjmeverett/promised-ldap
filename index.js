@@ -41,6 +41,7 @@ Client.prototype.search = function (base, options, controls) {
     var searchCallback = function (err, result) {
       var r = {
         entries: [],
+        hitSizeLimit: false,
         references: []
       };
 
@@ -53,6 +54,12 @@ Client.prototype.search = function (base, options, controls) {
       });
 
       result.on('error', function (err) {
+        if (options.sizeLimit && err.name === 'SizeLimitExceededError') {
+          // Swallow error on limiting result size if we are limited
+          // See https://github.com/mcavage/node-ldapjs/issues/236
+          r.hitSizeLimit = true
+          resolve(r);
+        }
         reject(err);
       });
 
