@@ -39,6 +39,10 @@ Client.prototype.search = function (base, options, controls) {
 
   return new Promise(function (resolve, reject) {
     var searchCallback = function (err, result) {
+      if (result === undefined) {
+        reject(err);
+      }
+
       var r = {
         entries: [],
         references: []
