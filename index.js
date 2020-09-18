@@ -25,7 +25,7 @@ function promisify(fn) {
 }
 
 
-['bind', 'add', 'compare', 'del', 'exop', 'modify', 'modifyDN', 'unbind'].forEach(function (fn) {
+['bind', 'add', 'compare', 'del', 'exop', 'modify', 'modifyDN', 'unbind', 'starttls'].forEach(function (fn) {
   Client.prototype[fn] = promisify(fn);
 });
 
