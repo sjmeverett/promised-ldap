@@ -1,8 +1,9 @@
 {
-  "name": "@cs125/promised-ldap",
-  "version": "2020.8.0",
+  "name": "@cs124/promised-ldap",
+  "version": "2023.1.0",
   "description": "A thin wrapper over ldapjs to give a promise interface and a couple of other goodies",
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/stewartml/promised-ldap.git"
@@ -19,8 +20,7 @@
   },
   "homepage": "https://github.com/stewartml/promised-ldap#readme",
   "dependencies": {
-    "any-promise": "^1.3.0",
-    "ldapjs": "^2.1.1",
-    "mocha": "^8.1.1"
+    "any-promise": "1.3.0",
+    "ldapjs": "2.3.3"
   }
 }
